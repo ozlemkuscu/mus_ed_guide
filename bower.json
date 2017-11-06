@@ -1,0 +1,11 @@
+{
+  "name": "mus_ed_guide",
+  "description": "Museum Education Guide Submission Form",
+  "authors": [
+    "Ozlem Kuscu"
+  ],
+  "private": true,
+  "dependencies": {
+    "core": "https://github.com/CityofToronto/corejs.git#5.0.1"
+  }
+}

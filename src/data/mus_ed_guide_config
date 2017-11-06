@@ -1,0 +1,610 @@
+{
+  "title": "Program Submission Form",
+  "v2": { "title": "Museum Education Guide" },
+  "dateTimeFormat": "MM/DD/YYYY hh:mm a",
+  "dateFormat": "MM/DD/YYYY",
+  "dateFormatView": "YYYY/MM/DD h:mm a",
+  "default_repo": "mus_ed_guide",
+  "timeOutMsg": "<br><br><p><strong>The session will time out after 15 minutes of inactivity, please save your work.</strong></p>",
+  "button": {
+    "submit": "Submit",
+    "edit": "Edit",
+    "viewSubmissions": "View Submissions",
+    "print": "Print",
+    "viewEdit": "View / Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "submitReport": "Submit"
+  },
+  "choices": {
+    "yesNoFull": [{
+      "text": "Yes",
+      "value": "Yes"
+    }, {
+      "text": "No",
+      "value": "No"
+    }]
+  },
+  "httpHost": {
+    "rootPath": {
+      "local": "/",
+      "dev": "/webapps/work/decom/mus_ed_guide_staff/",
+      "qa": "/webapps/mus_ed_guide_staff/",
+      "prod": "/webapps/mus_ed_guide_staff/"
+    },
+    "rootPath_public": {
+      "local": "/",
+      "dev": "/webapps/work/decom/mus_ed_guide_public/",
+      "qa": "/webapps/mus_ed_guide_public/",
+      "prod": "/webapps/mus_ed_guide_public/"
+    },
+    "root": {
+      "local": "localhost",
+      "dev": "https://was-intra-sit.toronto.ca",
+      "qa": "https://was-intra-qa.toronto.ca",
+      "prod": "https://insideto-secure.toronto.ca"
+    },
+    "root_public": {
+      "local": "localhost",
+      "dev": "https://was-inter-sit.toronto.ca",
+      "qa": "https://was-inter-qa.toronto.ca",
+      "prod": "https://secure.toronto.ca"
+    },
+    "app": {
+      "local": "https://was-intra-sit.toronto.ca",
+      "dev": "https://was-intra-sit.toronto.ca",
+      "qa": "https://was-intra-qa.toronto.ca",
+      "prod": "https://insideto-secure.toronto.ca"
+    },
+    "app_public": {
+      "local": "https://was-inter-sit.toronto.ca",
+      "dev": "https://was-inter-sit.toronto.ca",
+      "qa": "https://was-inter-qa.toronto.ca",
+      "prod": "https://secure.toronto.ca"
+    },
+    "program_public": {
+      "local": "localhost",
+      "dev": "https://was-inter-sit.toronto.ca/cc_sr_v1/data/mus_ed_guide_APR",
+      "qa": "https://was-inter-qa.toronto.ca/cc_sr_v1/data/mus_ed_guide_APR",
+      "prod": "https://secure.toronto.ca/cc_sr_v1/data/mus_ed_guide_APR"
+    },
+    "image_url_path": {
+      "local": "localhost",
+      "dev": "https://was-inter-sit.toronto.ca/webapps/CC/fileAPI/mus_ed_guide",
+      "qa": "https://was-inter-qa.toronto.ca/webapps/CC/fileAPI/mus_ed_guide",
+      "prod": "https://secure.toronto.ca/webapps/CC/fileAPI/mus_ed_guide"
+    },
+    "eventDispatcher": {
+      "dev": "http://cheetah-b4.corp.toronto.ca:5680",
+      "qa": "https://esb1qa.toronto.ca:5680",
+      "prod": "https://esb1.toronto.ca:5680"
+    }
+  },
+  "api": {
+    "get": "/cc_sr_admin_v1/retrieve/eventrepo/",
+    "post": "/cc_sr_admin_v1/submit/",
+    "put": "/cc_sr_admin_v1/submit/eventrepo/",
+    "delete": "/cc_sr_admin_v1/submit/eventrepo/",
+    "email": "/cc_sr_admin_v1/submit/mus_ed_guide_email",
+    "eventDispatcher": "/rest/COTEventDispatcher_V2/REST",
+    "upload": "/cc_sr_admin_v1/upload/",
+    "data": "/cc_sr_admin_v1/data/",
+    "session": "/cc_sr_admin_v1/session/",
+    "timeout": 60
+  },
+  "api_public": {
+    "post": "/c3api_data/v2/DataAccess.svc/",
+    "postPrev": "/cc_sr_v1/submit/",
+    "upload": "/cc_sr_v1/upload/",
+    "uploadStatus": "/cc_sr_v1/submit/",
+    "data": "/cc_sr_v1/data/",
+    "email": "/cc_sr_v1/submit/mus_ed_guide_email"
+  },
+  "members": {
+    "app_g": "G",
+    "app_admin": ["testweb1", "MuseumEducationGuide_user", "MuseumEducationGuide_admin", "okuscu", "bkiri"]
+  },
+  "admin_emails": {
+    "dev": { "Ozlem Kuscu": "ozlem.kuscu@toronto.ca" },
+    "qa": { "Ozlem Kuscu": "ozlem.kuscu@toronto.ca" },
+    "prod": { "Ozlem Kuscu": "ozlem.kuscu@toronto.ca" }
+  },
+  "captain_emails": {
+    "dev": {},
+    "qa": { "Ozlem Kuscu": "ozlem.kuscu@toronto.ca" },
+    "prod": { "Ozlem Kuscu": "ozlem.kuscu@toronto.ca" }
+  },
+  "recStatus": {
+    "title": "Status",
+    "choices": [
+      { "text": "New", "value": "New" },
+      { "text": "Pending", "value": "Pending" },
+      { "text": "Approved", "value": "Approved" },
+      { "text": "Rejected", "value": "Rejected" },
+      { "text": "Live", "value": "Live" },
+      { "text": "Archived", "value": "Archived" }
+    ]
+  },
+  "District": {
+    "title": "District",
+    "choices": [
+      { "text": "South", "value": "South" },
+      { "text": "North", "value": "North" },
+      { "text": "East", "value": "East" },
+      { "text": "West", "value": "West" }
+    ]
+  },
+  "ProgramName": {
+    "title": "Program Name",
+    "choices": [
+    { "text": "Other", "value": "Other" },
+    { "text": "A Child's Holiday", "value": "A Child's Holiday" },
+    { "text": "A Day and Night in the Life of the Garrison", "value": "A Day and Night in the Life of the Garrison" },
+    { "text": "A Day and Night in the Life of the Fur Traders", "value": "A Day and Night in the Life of the Fur Traders" },
+    { "text": "A Day and Night in the War of 1812", "value": "A Day and Night in the War of 1812" },
+    { "text": "A Pioneer Community at Zion Church", "value": "A Pioneer Community at Zion Church" },
+    { "text": "A Schoolhouse Christmas", "value": "A Schoolhouse Christmas" },
+    { "text": "A Taste of School Life", "value": "A Taste of School Life" },
+    { "text": "A Trip to the Market", "value": "A Trip to the Market" },
+    { "text": "A Victorian Christmas in Scarborough", "value": "A Victorian Christmas in Scarborough" },
+    { "text": "A Victorian Escapade", "value": "A Victorian Escapade" },
+    { "text": "Alchemy of Art, An Introduction to Chroma-Chemistry", "value": "Alchemy of Art, An Introduction to Chroma-Chemistry" },
+    { "text": "All Come to Order, A Look at Toronto's Government", "value": "All Come to Order, A Look at Toronto's Government" },
+    { "text": "An Austin Family Christmas", "value": "An Austin Family Christmas" },
+    { "text": "An Edwardian School Day", "value": "An Edwardian School Day" },
+    { "text": "An Urban Toronto Christmas", "value": "An Urban Toronto Christmas" },
+    { "text": "Architecture of a community", "value": "Architecture of a community" },
+    { "text": "Art Start! Introduction to Art Appreciation", "value": "Art Start! Introduction to Art Appreciation" },
+    { "text": "Black Press in Canada West", "value": "Black Press in Canada West" },
+    { "text": "Boom & Bustle", "value": "Boom & Bustle" },
+    { "text": "Bravo! Introduction to Theatre Arts", "value": "Bravo! Introduction to Theatre Arts" },
+    { "text": "Building Toronto", "value": "Building Toronto" },
+    { "text": "Cat's Christmas in Etobicoke", "value": "Cat's Christmas in Etobicoke" },
+    { "text": "Change in Toronto's Landscape", "value": "Change in Toronto's Landscape" },
+    { "text": "Christmas at the Inn", "value": "Christmas at the Inn" },
+    { "text": "Creepy Crawlies and Puddle Jumpers", "value": "Creepy Crawlies and Puddle Jumpers" },
+    { "text": "Early Scarborough Immigration", "value": "Early Scarborough Immigration" },
+    { "text": "Early Settler Experience", "value": "Early Settler Experience" },
+    { "text": "Edwardian Christmas In Toronto", "value": "Edwardian Christmas In Toronto" },
+    { "text": "Electricity and Inventions", "value": "Electricity and Inventions" },
+    { "text": "Explore the Past", "value": "Explore the Past" },
+    { "text": "Explore the past", "value": "Explore the past" },
+    { "text": "Exploring the Don Valley", "value": "Exploring the Don Valley" },
+    { "text": "Exploring Todmorden's Past", "value": "Exploring Todmorden's Past" },
+    { "text": "Families Lived Here", "value": "Families Lived Here" },
+    { "text": "Family Life", "value": "Family Life" },
+    { "text": "Fireside Happiness", "value": "Fireside Happiness" },
+    { "text": "First World War and the Canadian Soldier", "value": "First World War and the Canadian Soldier" },
+    { "text": "First World War, A Toronto Family Experience", "value": "First World War, A Toronto Family Experience" },
+    { "text": "Fort York and the War of 1812", "value": "Fort York and the War of 1812" },
+    { "text": "Freddy the Mouse Finds a House", "value": "Freddy the Mouse Finds a House" },
+    { "text": "From the Outside In", "value": "From the Outside In" },
+    { "text": "Garrison at York - ESL", "value": "Garrison at York - ESL" },
+    { "text": "Ghosts of Christmas Past", "value": "Ghosts of Christmas Past" },
+    { "text": "Gibson Adventures", "value": "Gibson Adventures" },
+    { "text": "Gibson Children at Home", "value": "Gibson Children at Home" },
+    { "text": "Harvest Adventures", "value": "Harvest Adventures" },
+    { "text": "Hickory Dickory Dock", "value": "Hickory Dickory Dock" },
+    { "text": "High Park Habitats", "value": "High Park Habitats" },
+    { "text": "High Park Past and Present", "value": "High Park Past and Present" },
+    { "text": "High Park Planning for the Future", "value": "High Park Planning for the Future" },
+    { "text": "High-Park Past and Present", "value": "High-Park Past and Present" },
+    { "text": "High-Park Planning for the Future", "value": "High-Park Planning for the Future" },
+    { "text": "Holiday Preparations", "value": "Holiday Preparations" },
+    { "text": "Howard's Party", "value": "Howard's Party" },
+    { "text": "In a New Land Called Home", "value": "In a New Land Called Home" },
+    { "text": "In Arms Against the Government", "value": "In Arms Against the Government" },
+    { "text": "Japanese Hanging Koi", "value": "Japanese Hanging Koi" },
+    { "text": "John Graves Simcoe and the Birthplace of Toronto", "value": "John Graves Simcoe and the Birthplace of Toronto" },
+    { "text": "Keystones & Gargoyles", "value": "Keystones & Gargoyles" },
+    { "text": "Landscape Industry and Change", "value": "Landscape Industry and Change" },
+    { "text": "Life in the Confederation Era", "value": "Life in the Confederation Era" },
+    { "text": "Life on Willowdale Farm", "value": "Life on Willowdale Farm" },
+    { "text": "Light, Sound, Action", "value": "Light, Sound, Action" },
+    { "text": "Living History, A Day In the Life of The Fur Traders", "value": "Living History, A Day In the Life of The Fur Traders" },
+    { "text": "Living History, A Day in the life of the Garrison", "value": "Living History, A Day in the life of the Garrison" },
+    { "text": "Mackenzie's Toronto, A Walking Tour", "value": "Mackenzie's Toronto, A Walking Tour" },
+    { "text": "Magda Marches On", "value": "Magda Marches On" },
+    { "text": "Mapping Toronto's History", "value": "Mapping Toronto's History" },
+    { "text": "Mechanical Wonders", "value": "Mechanical Wonders" },
+    { "text": "Mexican Folk Art", "value": "Mexican Folk Art" },
+    { "text": "My First Museum Visit", "value": "My First Museum Visit" },
+    { "text": "Nature in Art", "value": "Nature in Art" },
+    { "text": "Nature of High Park", "value": "Nature of High Park" },
+    { "text": "Patterns in Human Geography, The Spadina Property", "value": "Patterns in Human Geography, The Spadina Property" },
+    { "text": "Pen and Paintbrush", "value": "Pen and Paintbrush" },
+    { "text": "Pioneers at York 1790s to 1830s", "value": "Pioneers at York 1790s to 1830s" },
+    { "text": "Plants, Ponds, and Populations", "value": "Plants, Ponds, and Populations" },
+    { "text": "Political Activism and the Black Community in the 19th century", "value": "Political Activism and the Black Community in the 19th century" },
+    { "text": "Politicians, Parties, and Plots", "value": "Politicians, Parties, and Plots" },
+    { "text": "Printer's Devils", "value": "Printer's Devils" },
+    { "text": "Punctual, Diligent and Courteous", "value": "Punctual, Diligent and Courteous" },
+    { "text": "Radical Rebel", "value": "Radical Rebel" },
+    { "text": "Radicals and Redcoats", "value": "Radicals and Redcoats" },
+    { "text": "Rebellion", "value": "Rebellion" },
+    { "text": "Rural Settlers in Early Toronto", "value": "Rural Settlers in Early Toronto" },
+    { "text": "Set Sail", "value": "Set Sail" },
+    { "text": "Settlers of the Valley", "value": "Settlers of the Valley" },
+    { "text": "Singing of Birds", "value": "Singing of Birds" },
+    { "text": "Spadina's Story", "value": "Spadina's Story" },
+    { "text": "Take a Step Back in Time", "value": "Take a Step Back in Time" },
+    { "text": "Telling Tales", "value": "Telling Tales" },
+    { "text": "Through Bertie's Eyes", "value": "Through Bertie's Eyes" },
+    { "text": "Time Travelling at the Inn", "value": "Time Travelling at the Inn" },
+    { "text": "Toronto and the Fur Trade", "value": "Toronto and the Fur Trade" },
+    { "text": "Toronto Settlers, Life in a Victorian Community", "value": "Toronto Settlers, Life in a Victorian Community" },
+    { "text": "Town to City: St. Lawrence Neighborhood in the 1830's - self-guided walking tour", "value": "Town to City: St. Lawrence Neighborhood in the 1830's - self-guided walking tour" },
+    { "text": "Travellers All", "value": "Travellers All" },
+    { "text": "Venetian Masks", "value": "Venetian Masks" },
+    { "text": "Victorian Black Press", "value": "Victorian Black Press" },
+    { "text": "Waterways - Environmental Impact at Todmorden Mills", "value": "Waterways - Environmental Impact at Todmorden Mills" },
+    { "text": "William Lyon Mackenzie, An Immigrant's Experience", "value": "William Lyon Mackenzie, An Immigrant's Experience" }
+    ]
+  },
+  "Curriculum": {
+    "title": "Ontario Curriculum Subject",
+    "choices": [
+    { "text": "Arts (including Visual Arts)", "value": "Arts (including Visual Arts)" },
+    { "text": "Drama", "value": "Drama" },
+    { "text": "ESL", "value": "ESL" },
+    { "text": "Geography", "value": "Geography" },
+    { "text": "History", "value": "History" },
+    { "text": "Language", "value": "Language" },
+    { "text": "Mathematics", "value": "Mathematics" },
+    { "text": "Music", "value": "Music" },
+    { "text": "Science & Technology", "value": "Science & Technology" },
+    { "text": "Social Studies", "value": "Social Studies" },
+    { "text": "Social Sciences & Humanities", "value": "Social Sciences & Humanities" },
+    { "text": "Traditions & Celebrations", "value": "Traditions & Celebrations" },
+    { "text": "Holiday Season Programming", "value": "Holiday Season Programming" }
+  ]
+},
+"Grade": {
+  "title": "Grade",
+  "choices": [
+    { "text": "Kindergarten", "value": "Kindergarten" },
+    { "text": "Grade 1", "value": "Grade 1" },
+    { "text": "Grade 2", "value": "Grade 2" },
+    { "text": "Grade 3", "value": "Grade 3" },
+    { "text": "Grade 4", "value": "Grade 4" },
+    { "text": "Grade 5", "value": "Grade 5" },
+    { "text": "Grade 6", "value": "Grade 6" },
+    { "text": "Grade 7", "value": "Grade 7" },
+    { "text": "Grade 8", "value": "Grade 8" },
+    { "text": "Grade 9", "value": "Grade 9" },
+    { "text": "Grade 10", "value": "Grade 10" },
+    { "text": "Grade 11", "value": "Grade 11" },
+    { "text": "Grade 12", "value": "Grade 12" },
+    { "text": "ESL", "value": "ESL" },
+    { "text": "General Audience", "value": "General Audience" }
+  ]
+},
+"PrimaryTopic": {
+  "title": "Primary Topic",
+  "choices": [
+    { "text": "Arts Fundamentals", "value": "Arts Fundamentals" },
+    { "text": "Aspects of Citizenship & Government in Canada", "value": "Aspects of Citizenship & Government in Canada" },
+    { "text": "Black History Month", "value": "Black History Month" },
+    { "text": "British North America", "value": "British North America" },
+    { "text": "Canada: A Changing Society", "value": "Canada: A Changing Society" },
+    { "text": "Canada’s Link to the World", "value": "Canada’s Link to the World" },
+    { "text": "Characteristics of Castles", "value": "Characteristics of Castles" },
+    { "text": "Characteristics of Objects and Properties of Materials", "value": "Characteristics of Objects and Properties of Materials" },
+    { "text": "Confederation", "value": "Confederation" },
+    { "text": "Conflict and Change", "value": "Conflict and Change" },
+    { "text": "Creating Art Inspired by the Natural World", "value": "Creating Art Inspired by the Natural World" },
+    { "text": "Diversity in Urban and Rural Communities", "value": "Diversity in Urban and Rural Communities" },
+    { "text": "Drama + Dance", "value": "Drama + Dance" },
+    { "text": "Early Settlements in Upper Canada", "value": "Early Settlements in Upper Canada" },
+    { "text": "Electricity", "value": "Electricity" },
+    { "text": "Exploration & Experimentation", "value": "Exploration & Experimentation" },
+    { "text": "Family Studies", "value": "Family Studies" },
+    { "text": "First Nation Peoples and European Explorers", "value": "First Nation Peoples and European Explorers" },
+    { "text": "Food and Nutritional Sciences", "value": "Food and Nutritional Sciences" },
+    { "text": "Forces Acting on Structures & Mechanisms", "value": "Forces Acting on Structures & Mechanisms" },
+    { "text": "Geographic Inquiry", "value": "Geographic Inquiry" },
+    { "text": "Growth & Changes in Plants", "value": "Growth & Changes in Plants" },
+    { "text": "Habitats & Communities", "value": "Habitats & Communities" },
+    { "text": "Healthy Living", "value": "Healthy Living" },
+    { "text": "Heritage & Citizenship", "value": "Heritage & Citizenship" },
+    { "text": "History of Mexican folk art", "value": "History of Mexican folk art" },
+    { "text": "Interactions with Ecosystems", "value": "Interactions with Ecosystems" },
+    { "text": "Interactions within Ecosystems", "value": "Interactions within Ecosystems" },
+    { "text": "History and creation of Venetian Masks", "value": "History and creation of Venetian Masks" },
+    { "text": "Japanese Culture and the History of Collage", "value": "Japanese Culture and the History of Collage" },
+    { "text": "Life Systems", "value": "Life Systems" },
+    { "text": "Light and Sound Energy", "value": "Light and Sound Energy" },
+    { "text": "Matter and Materials", "value": "Matter and Materials" },
+    { "text": "Local Community", "value": "Local Community" },
+    { "text": "Media Literacy", "value": "Media Literacy" },
+    { "text": "Natural Resources", "value": "Natural Resources" },
+    { "text": "Optics, Drama + Dance", "value": "Optics, Drama + Dance" },
+    { "text": "Optics", "value": "Optics" },
+    { "text": "Oral Communications", "value": "Oral Communications" },
+    { "text": "Patterns in Human Geography", "value": "Patterns in Human Geography" },
+    { "text": "Patterns in Physical Geography", "value": "Patterns in Physical Geography" },
+    { "text": "Properties & Change in Matter", "value": "Properties & Change in Matter" },
+    { "text": "Pure substances and mixtures", "value": "Pure substances and mixtures" },
+    { "text": "Relationship, Rules & Responsibilities", "value": "Relationship, Rules & Responsibilities" },
+    { "text": "Themes of Geographic Inquiry; Patterns in Human Geography", "value": "Themes of Geographic Inquiry; Patterns in Human Geography" },
+    { "text": "Traditions & Celebrations", "value": "Traditions & Celebrations" },
+    { "text": "Urban and Rural Communities", "value": "Urban and Rural Communities" },
+    { "text": "Visual Arts", "value": "Visual Arts" },
+    { "text": "Water Systems", "value": "Water Systems" },
+    { "text": "Canadian History Since World War I (First World War)", "value": "Canadian History Since World War I (First World War)" },
+    { "text": "Change and Continuity", "value": "Change and Continuity" },
+    { "text": "Methods of Historical Inquiry & Communication", "value": "Methods of Historical Inquiry & Communication" },
+    { "text": "Individuals & Families in a Diverse Society", "value": "Individuals & Families in a Diverse Society" },
+    { "text": "Archives and Local History", "value": "Archives and Local History" },
+    { "text": "No topic listed", "value": "No topic listed" }  
+  ]
+},
+"AdditionalTopic": {
+  "title": "Additional Topic",
+  "choices": [
+    { "text": "Arts Fundamentals", "value": "Arts Fundamentals" },
+    { "text": "Aspects of Citizenship & Government in Canada", "value": "Aspects of Citizenship & Government in Canada" },
+    { "text": "Black History Month", "value": "Black History Month" },
+    { "text": "British North America", "value": "British North America" },
+    { "text": "Canada: A Changing Society", "value": "Canada: A Changing Society" },
+    { "text": "Canada’s Link to the World", "value": "Canada’s Link to the World" },
+    { "text": "Characteristics of Castles", "value": "Characteristics of Castles" },
+    { "text": "Characteristics of Objects and Properties of Materials", "value": "Characteristics of Objects and Properties of Materials" },
+    { "text": "Confederation", "value": "Confederation" },
+    { "text": "Conflict and Change", "value": "Conflict and Change" },
+    { "text": "Creating Art Inspired by the Natural World", "value": "Creating Art Inspired by the Natural World" },
+    { "text": "Diversity in Urban and Rural Communities", "value": "Diversity in Urban and Rural Communities" },
+    { "text": "Early Settlements in Upper Canada", "value": "Early Settlements in Upper Canada" },
+    { "text": "Electricity", "value": "Electricity" },
+    { "text": "Exploration & Experimentation", "value": "Exploration & Experimentation" },
+    { "text": "Family Studies", "value": "Family Studies" },
+    { "text": "First Nation Peoples and European Explorers", "value": "First Nation Peoples and European Explorers" },
+    { "text": "Food and Nutritional Sciences", "value": "Food and Nutritional Sciences" },
+    { "text": "Forces Acting on Structures & Mechanisms", "value": "Forces Acting on Structures & Mechanisms" },
+    { "text": "Geographic Inquiry", "value": "Geographic Inquiry" },
+    { "text": "Growth & Changes in Plants", "value": "Growth & Changes in Plants" },
+    { "text": "Habitats & Communities", "value": "Habitats & Communities" },
+    { "text": "Healthy Living", "value": "Healthy Living" },
+    { "text": "Heritage & Citizenship", "value": "Heritage & Citizenship" },
+    { "text": "History of Mexican folk art", "value": "History of Mexican folk art" },
+    { "text": "Interactions with Ecosystems", "value": "Interactions with Ecosystems" },
+    { "text": "History and creation of Venetian Masks", "value": "History and creation of Venetian Masks" },
+    { "text": "Japanese Culture and the History of Collage", "value": "Japanese Culture and the History of Collage" },
+    { "text": "Life Systems", "value": "Life Systems" },
+    { "text": "Light and Sound Energy", "value": "Light and Sound Energy" },
+    { "text": "Matter and Materials", "value": "Matter and Materials" },
+    { "text": "Local Community", "value": "Local Community" },
+    { "text": "Media Literacy", "value": "Media Literacy" },
+    { "text": "Natural Resources", "value": "Natural Resources" },
+    { "text": "Optics, Drama + Dance", "value": "Optics, Drama + Dance" },
+    { "text": "Oral Communications", "value": "Oral Communications" },
+    { "text": "Patterns in Human Geography", "value": "Patterns in Human Geography" },
+    { "text": "Patterns in Physical Geography", "value": "Patterns in Physical Geography" },
+    { "text": "Properties & Change in Matter", "value": "Properties & Change in Matter" },
+    { "text": "Pure substances and mixtures", "value": "Pure substances and mixtures" },
+    { "text": "Relationship, Rules & Responsibilities", "value": "Relationship, Rules & Responsibilities" },
+    { "text": "Themes of Geographic Inquiry; Patterns in Human Geography", "value": "Themes of Geographic Inquiry; Patterns in Human Geography" },
+    { "text": "Urban and Rural Communities", "value": "Urban and Rural Communities" },
+    { "text": "Visual Arts", "value": "Visual Arts" },
+    { "text": "Water Systems", "value": "Water Systems" },
+    { "text": "Canadian History Since World War I (First World War)", "value": "Canadian History Since World War I (First World War)" },
+    { "text": "Change and Continuity", "value": "Change and Continuity" },
+    { "text": "Methods of Historical Inquiry & Communication", "value": "Methods of Historical Inquiry & Communication" },
+    { "text": "Individuals & Families in a Diverse Society", "value": "Individuals & Families in a Diverse Society" },
+    { "text": "Archives and Local History", "value": "Archives and Local History" },
+    { "text": "No topic listed", "value": "No topic listed" }
+ ]
+},
+"AdditionalCurriculum": {
+  "title": "Additional curriculum/subject areas",
+  "choices": [
+    { "text": "Drama/Dance", "value": "Drama/Dance" },
+    { "text": "Geography", "value": "Geography" },
+    { "text": "Language", "value": "Language" },
+    { "text": "Mathematics", "value": "Mathematics" },
+    { "text": "Music", "value": "Music" },
+    { "text": "Science & Technology", "value": "Science & Technology" },
+    { "text": "Social Studies", "value": "Social Studies" },
+    { "text": "History", "value": "History" },
+    { "text": "Visual Arts", "value": "Visual Arts" }
+ ]
+},
+"Duration": {
+  "title": "Duration",
+  "choices": [
+    { "text": "1 hour", "value": "1 hour"},
+    { "text": "1.5 hour", "value": "1.5 hour"},
+    { "text": "2 hour", "value": "2 hour"},
+    { "text": "2.5 hour", "value": "2.5 hour"},
+    { "text": "3 hour", "value": "3 hour"},
+    { "text": "3.5 hour", "value": "3.5 hour"},
+    { "text": "4 hour", "value": "4 hour"},
+    { "text": "4.5 hour", "value": "4.5 hour"},
+    { "text": "5 hour", "value": "5 hour"}
+  ]
+},
+"SiteName": {
+  "title": "Site Name",
+  "choices": [
+    { "text": "Cedar Ridge Creative Centre", "value": "Cedar Ridge Creative Centre" },
+    { "text": "Colborne Lodge", "value": "Colborne Lodge" },
+    { "text": "Fort York National Historic Site", "value": "Fort York National Historic Site" },
+    { "text": "Gibson House", "value": "Gibson House" },
+    { "text": "Historic Zion School House", "value": "Historic Zion School House" },
+    { "text": "Mackenzie House", "value": "Mackenzie House" },
+    { "text": "Market Gallery", "value": "Market Gallery" },
+    { "text": "Montgomery’s Inn", "value": "Montgomery’s Inn" },
+    { "text": "Scarborough Historical Museum", "value": "Scarborough Historical Museum" },
+    { "text": "Spadina Museum: Historic House & Gardens", "value": "Spadina Museum: Historic House & Gardens" },
+    { "text": "Todmorden Mills Heritage Site", "value": "Todmorden Mills Heritage Site" },
+    { "text": "York Museum", "value": "York Museum" },
+    { "text": "Zion Church", "value": "Zion Church" },
+    { "text": "Zion Schoolhouse", "value": "Zion Schoolhouse" }
+]
+},
+"LunchOption": {
+  "title": "Lunch Option",
+  "choices": [
+    { "text": "Lunch not provided (no on-site lunch area)", "value": "Lunch not provided (no on-site lunch area)" },
+    { "text": "Lunch not provided but lunch area available", "value": "Lunch not provided but lunch area available" },
+    { "text": "Students make lunch on site", "value": "Students make lunch on site" }
+]
+},
+"OtherOptions": {
+  "title": "Other Options",
+  "choices": [
+    { "text": "Invoiced payment method available", "value": "Invoiced payment method available" },
+    { "text": "Pay day of visit", "value": "Pay day of visit" },
+    { "text": "Vocabulary lists available", "value": "Vocabulary lists available" },
+    { "text": "Joint Programs available", "value": "Joint Programs available" },
+    { "text": "In-class available (contact site for classroom prices)", "value": "In-class available (contact site for classroom prices)" },
+    { "text": "Outreach", "value": "Outreach" },
+    { "text": "Overnight programs available (contact site for details)", "value": "Overnight programs available (contact site for details)" },
+    { "text": "Program designed for classes with dietary concerns", "value": "Program designed for classes with dietary concerns" },
+    { "text": "Pre and/or post visit classroom packages available", "value": "Pre and/or post visit classroom packages available" },
+    { "text": "Shorter program option available", "value": "Shorter program option available" },
+    { "text": "Warm weather option available", "value": "Warm weather option available" }
+ ]
+},
+"Availability": {
+  "title": "Availability (season)",
+  "choices": [
+    { "text": "Program available throughout the school year (Sept – June)", "value": "Program available throughout the school year (Sept – June)" },
+    { "text": "Seasonal – Spring (April – June)", "value": "Seasonal – Spring (April – June)" },
+    { "text": "Seasonal – Fall (Sept – Nov)", "value": "Seasonal – Fall (Sept – Nov)" },
+    { "text": "Seasonal – Summer (July – Aug)", "value": "Seasonal – Summer (July – Aug)" },
+    { "text": "Seasonal – Winter (Dec - March)", "value": "Seasonal – Winter (Dec - March)" },
+    { "text": "Seasonal - Winter, including Holiday programming (Nov – Dec only)", "value": "Seasonal - Winter, including Holiday programming (Nov – Dec only)" }
+ ]
+},
+"StartTime": {
+  "title": "Start Time required",
+  "choices": [
+    { "text": "AM", "value": "AM" },
+    { "text": "PM", "value": "PM" },
+    { "text": "AM or PM", "value": "AM or PM" }
+]
+},
+  "messages": {
+    "current": "",
+    "load": {
+      "fail": "Unable to load! Report could not be retrieved. Please try again."
+    },
+    "save": {
+      "done": "Saved! This report was successfully saved.",
+      "fail": "Unable to save! This report could not be saved. Please try again."
+    },
+    "notify": {
+      "done": "Notified! This report was successfully sent to the Emergency Management Captain.",
+      "fail": "Unable to notify! This report could not be sent to the Emergency Management Captain. Please try again.",
+      "emailFrom": "wmDev@toronto.ca",
+      "emailSubject": "New Museum Education Guide",
+      "emailBody": "New Museum Education Guide has been received.",
+      "sendNotification": true
+    },
+    "submit": {
+      "done": "Thank you! Your request has been received.",
+      "fail": "Unable to submit! This report could not be submitted to the Administrator. Please try again."
+    },
+    "delete": {
+      "done": "Deleted! Report was successfully deleted.",
+      "fail": "Unable to delete! This report could not be deleted. Please try again."
+    },
+    "noSubmissionsFound": "No submissions found.",
+    "fadeOutTime": 8000
+  },
+  "auth": {
+    "login": "<h2>Session timeout! Please log in to access this application.</h2>",
+    "group": "<h2>Unauthorized! You don\"t have sufficient group permissions to view this application.</h2>"
+  },
+  "status": {
+    "Draft": "Yes",
+    "Submitted": "Yes",
+    "Pending": "Pending",
+    "Approved": "Approved",
+    "Rejected": "Rejected",
+    "Live": "APR",
+    "Archived": "Archived",
+    "Invalid": "Invalid",
+    "Deleted": "DEL",
+    "Yes": "New",
+    "Search": "Global Search",
+    "All": "All",
+    "DraftApp": "New",
+    "YesApp": "New",
+    "SubmittedApp": "Pending",
+    "ApprovedApp": "Approved",
+    "RejectedApp": "Rejected",
+    "LiveApp": "Live",
+    "ArchivedApp": "Archived"
+  },
+  "admin":
+  {
+   "imageDropzonePublic": {
+      "acceptedFiles": "image/*",
+      "maxFiles": 1,
+      "dictDefaultMessage": "Drop images here or <button class='btn-link' aria-label='File Upload - Drop images here or click to upload' type='button'>select</button> to upload.",
+      "maxFilesize": 10,
+      "dictFileTooBig": "Maximum size for file attachment is 10 MB",
+      "addRemoveLinks": true,
+      "dictMaxFilesExceeded": "Maximum 1 uploaded file"
+    },
+    "imageDropzoneStaff": {
+      "acceptedFiles": "image/*",
+      "maxFiles": 1,
+      "dictDefaultMessage": "Drop images here or <button class='btn-link' aria-label='File Upload - Drop images here or click to upload' type='button'>select</button> to upload.",
+      "maxFilesize": 10,
+      "dictFileTooBig": "Maximum size for file attachment is 10 MB",
+      "addRemoveLinks": true,
+      "dictMaxFilesExceeded": "Maximum 1 uploaded file"
+    }
+  },
+"breadcrumbtrail": [{
+  "name": "City of Toronto",
+  "link": "https://web.toronto.ca"
+}, {
+  "name": "Explore & Enjoy",
+  "link": "https://web.toronto.ca/explore-enjoy/"
+}, {
+  "name": "History, Art & Culture",
+  "link": "http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=f3f09d50208fb510VgnVCM10000071d60f89RCRD"
+}, {
+  "name": "Museums",
+  "link": "https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=956c8be3abc0c510VgnVCM10000071d60f89RCRD"
+}],
+"View_Edit": "Open",
+"Form Title": "Museum Education Guide",
+"Admin Section": "Admin Section",
+"Notes": "Notes",
+"Map Address": "Map Address",
+"Site URL": "Site URL",
+"Site Picture Name": "Site Picture Name",
+"ProgramNameSelect": "Returning Program",
+"ProgramNameText": "or New Program",
+"Profile Created": "Created",
+"Submission Date Column": "Submission Date",
+"Secondary Topic": "Secondary Topic",
+"Tertiary Topic": "Tertiary Topic",
+"New Topic": "or New Topic",
+"Description": "Description",
+"DescriptionText": "(500 characters max)",
+"Bullet Text 1": "Activity List 1",
+"Bullet Text 2": "Activity List 2",
+"Bullet Text 3": "Activity List 3",
+"Bullet Text 4": "Activity List 4",
+"MinStudents": "Min Number of Students",
+"MaxStudents": "Max Number of Students",
+"PriceStudent": "Price per Student",
+"PriceProgram": "Price per Program",
+"Site Name": "Site Name",
+"Site Address": "Site Address",
+"Site Phone": "Site Phone",
+"Site Email": "Site Email",
+"Program Section": "Section One: Program Information",
+"Program Photo": "Program Photo",
+"Program Photo Text": "Note: Please choose a picture that depicts the cultural diversity of our programs.",
+"Site Section": "Section Two: Site Information",
+"Attachments Section": "Attachments",
+"SubmitText": "Please review/print your information before submitting.  Once you click submit, you won't be able to edit/print.",
+"File Attachment": "File Attachment"
+}
